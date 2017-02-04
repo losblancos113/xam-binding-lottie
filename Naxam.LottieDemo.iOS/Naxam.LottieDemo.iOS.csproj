@@ -118,5 +118,11 @@
   <ItemGroup>
     <BundleResource Include="Resources\LottieLogo1.json" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Naxam.Lottie.iOS\Naxam.Lottie.iOS.csproj">
+      <Project>{7819C5D2-4D97-4B58-83FD-98D51C9D787A}</Project>
+      <Name>Naxam.Lottie.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
