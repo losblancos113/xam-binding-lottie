@@ -6,7 +6,7 @@
     <ProjectGuid>{7B55475C-82E2-43FE-B061-457D244BBB2B}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Naxam.LottieDemo</RootNamespace>
+    <RootNamespace>Naxam.LottieDemo.iOS</RootNamespace>
     <AssemblyName>Naxam.LottieDemo</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
   </PropertyGroup>
@@ -30,6 +30,7 @@
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <DeviceSpecificBuild>false</DeviceSpecificBuild>
     <MtouchExtraArgs>--mono:framework</MtouchExtraArgs>
+<AssemblyName>Naxam.LottieDemo.iOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -62,6 +63,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
+<AssemblyName>Naxam.LottieDemo.iOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -115,12 +117,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\LottieLogo1.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Naxam.Lottie\Naxam.Lottie.csproj">
-      <Project>{7819C5D2-4D97-4B58-83FD-98D51C9D787A}</Project>
-      <Name>Naxam.Lottie</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

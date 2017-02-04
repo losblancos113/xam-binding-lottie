@@ -1,9 +1,9 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.Lottie", "Naxam.Lottie\Naxam.Lottie.csproj", "{7819C5D2-4D97-4B58-83FD-98D51C9D787A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.Lottie.iOS", "Naxam.Lottie.iOS\Naxam.Lottie.iOS.csproj", "{7819C5D2-4D97-4B58-83FD-98D51C9D787A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.LottieDemo", "Naxam.LottieDemo\Naxam.LottieDemo.csproj", "{7B55475C-82E2-43FE-B061-457D244BBB2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.LottieDemo.iOS", "Naxam.LottieDemo.iOS\Naxam.LottieDemo.iOS.csproj", "{7B55475C-82E2-43FE-B061-457D244BBB2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
