@@ -5,9 +5,10 @@ using UIKit;
 
 namespace Naxam.LottieDemo
 {
-	public partial class ViewController : UIViewController
+	public partial class ViewController : UIViewController, IUITableViewDelegate, IUITableViewDataSource
 	{
 		private Lottie.LAAnimationView lottieLogo;
+		private Sample[] samples;
 
 		protected ViewController(IntPtr handle) : base(handle)
 		{
@@ -17,19 +18,18 @@ namespace Naxam.LottieDemo
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			// Perform any additional setup after loading the view, typically from a nib.
 
-			//var resPath = NSBundle.MainBundle.PathForResource("LottieLogo1", "json");
-			//var data = NSData.FromFile(resPath);
-			//NSError error;
-			//var json = NSJsonSerialization.Deserialize(data, 0, out error) as NSDictionary;
-
-			//var lottieLogo = Lottie.LAAnimationView.AnimationFromJSON(json);
+			PopulateData();
 
 			lottieLogo = Lottie.LAAnimationView.AnimationNamed("LottieLogo1");
 			lottieLogo.ContentMode = UIViewContentMode.ScaleAspectFill;
+			vwLogo.InsertSubview(lottieLogo, 0);
 
-			View.AddSubview(lottieLogo);
+			btnReplay.TouchUpInside += BtnReplay_TouchUpInside;
+
+			lstSamples.RegisterClassForCellReuse(typeof(UITableViewCell), "cell");
+			lstSamples.Delegate = this;
+			lstSamples.DataSource = this;
 		}
 
 		public override void ViewDidAppear(bool animated)
@@ -48,14 +48,67 @@ namespace Naxam.LottieDemo
 		{
 			base.ViewDidLayoutSubviews();
 
-			var rect = new CGRect(0, 0, View.Bounds.Size.Width, View.Bounds.Size.Height * 0.3);
+			var rect = new CGRect(0, 0, vwLogo.Bounds.Size.Width, vwLogo.Bounds.Size.Height);
 			lottieLogo.Frame = rect;
+			//btnReplay.Frame = rect;
 		}
 
 		public override void DidReceiveMemoryWarning()
 		{
 			base.DidReceiveMemoryWarning();
 			// Release any cached data, images, etc that aren't in use.
+		}
+
+		void BtnReplay_TouchUpInside(object sender, EventArgs e)
+		{
+			lottieLogo.AnimationProgress = 0;
+			lottieLogo.Play();
+		}
+
+		void PopulateData() { 
+			samples = new Sample[] { 
+				new Sample { 
+					Title = "Animation Explorer",
+
+				},
+				new Sample {
+					Title = "Animated Keyboard",
+
+				},
+				new Sample {
+					Title = "Animated Transitions Demo",
+
+				}
+			};
+		}
+
+		public nint RowsInSection(UITableView tableView, nint section)
+		{
+			return samples.Length;
+		}
+
+		public UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
+		{
+			var sample = samples[indexPath.Row];
+			
+			var cell = tableView.DequeueReusableCell("cell");
+			cell.TextLabel.Text = sample.Title;
+
+			return cell;
+		}
+	}
+
+	public class Sample { 
+		public string Title
+		{
+			get;
+			set;
+		}
+
+		public Type ControllerType
+		{
+			get;
+			set;
 		}
 	}
 }
