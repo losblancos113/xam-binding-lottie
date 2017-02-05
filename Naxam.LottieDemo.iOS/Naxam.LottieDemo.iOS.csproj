@@ -129,6 +129,11 @@
     <Compile Include="AnimationExplorerViewController.designer.cs">
       <DependentUpon>AnimationExplorerViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="JSONExplorerViewController.cs" />
+    <Compile Include="JSONExplorerViewController.designer.cs">
+      <DependentUpon>JSONExplorerViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LAAnimationViewHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\LottieLogo1.json" />

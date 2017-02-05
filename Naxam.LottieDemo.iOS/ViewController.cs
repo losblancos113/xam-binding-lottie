@@ -1,6 +1,7 @@
 ﻿using System;
 using CoreGraphics;
 using Foundation;
+using Naxam.LottieDemo.iOS;
 using UIKit;
 
 namespace Naxam.LottieDemo
@@ -69,7 +70,7 @@ namespace Naxam.LottieDemo
 			samples = new Sample[] { 
 				new Sample { 
 					Title = "Animation Explorer",
-
+					ControllerType = typeof(AnimationExplorerViewController)
 				},
 				new Sample {
 					Title = "Animated Keyboard",
@@ -95,6 +96,19 @@ namespace Naxam.LottieDemo
 			cell.TextLabel.Text = sample.Title;
 
 			return cell;
+		}
+
+		[Export("tableView:didSelectRowAtIndexPath:")]
+		public void RowSelected(UITableView tableView, NSIndexPath indexPath)
+		{
+			var sample = samples[indexPath.Row];
+			var segue = sample.ControllerType?.Name;
+
+			if (string.IsNullOrWhiteSpace(segue)) {
+				return;
+			}
+
+			PerformSegue(segue, this);
 		}
 	}
 
