@@ -70,17 +70,4 @@ namespace Lottie
 		[Export("addSubview:toLayerNamed:")]
 		void AddSubview(UIView view, string layer);
 	}
-
-	//[Static]
-	//[Verify(ConstantsInterfaceAssociation)]
-	//partial interface Constants
-	//{
-	//	// extern double LottieVersionNumber;
-	//	[Field("LottieVersionNumber", "__Internal")]
-	//	double LottieVersionNumber { get; }
-
-	//	// extern const unsigned char [] LottieVersionString;
-	//	[Field("LottieVersionString", "__Internal")]
-	//	byte[] LottieVersionString { get; }
-	//}
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using CoreGraphics;
 using Foundation;
 using UIKit;
 
@@ -6,6 +7,8 @@ namespace Naxam.LottieDemo
 {
 	public partial class ViewController : UIViewController
 	{
+		private Lottie.LAAnimationView lottieLogo;
+
 		protected ViewController(IntPtr handle) : base(handle)
 		{
 			// Note: this .ctor should not contain any initialization logic.
@@ -23,10 +26,30 @@ namespace Naxam.LottieDemo
 
 			//var lottieLogo = Lottie.LAAnimationView.AnimationFromJSON(json);
 
-			var lottieLogo = Lottie.LAAnimationView.AnimationNamed("LottieLogo1");
+			lottieLogo = Lottie.LAAnimationView.AnimationNamed("LottieLogo1");
 			lottieLogo.ContentMode = UIViewContentMode.ScaleAspectFill;
 
 			View.AddSubview(lottieLogo);
+		}
+
+		public override void ViewDidAppear(bool animated)
+		{
+			base.ViewDidAppear(animated);
+			lottieLogo.Play();
+		}
+
+		public override void ViewDidDisappear(bool animated)
+		{
+			base.ViewDidDisappear(animated);
+			lottieLogo.Pause();
+		}
+
+		public override void ViewDidLayoutSubviews()
+		{
+			base.ViewDidLayoutSubviews();
+
+			var rect = new CGRect(0, 0, View.Bounds.Size.Width, View.Bounds.Size.Height * 0.3);
+			lottieLogo.Frame = rect;
 		}
 
 		public override void DidReceiveMemoryWarning()

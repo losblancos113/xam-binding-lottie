@@ -1,5 +1,5 @@
 framework module Lottie {
-  umbrella header "lottie-ios-umbrella.h"
+  umbrella header "Lottie.h"
 
   export *
   module * { export * }
