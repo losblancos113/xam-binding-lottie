@@ -78,7 +78,7 @@ namespace Naxam.LottieDemo
 				},
 				new Sample {
 					Title = "Animated Transitions Demo",
-
+					ControllerType = typeof(AnimationTransitionViewController)
 				}
 			};
 		}
@@ -102,13 +102,18 @@ namespace Naxam.LottieDemo
 		public void RowSelected(UITableView tableView, NSIndexPath indexPath)
 		{
 			var sample = samples[indexPath.Row];
-			var segue = sample.ControllerType?.Name;
 
-			if (string.IsNullOrWhiteSpace(segue)) {
-				return;
+			if (sample.ControllerType == typeof(AnimationExplorerViewController))
+			{
+				PerformSegue(sample.ControllerType.Name, this);
 			}
-
-			PerformSegue(segue, this);
+			else if (sample.ControllerType == typeof(AnimationTransitionViewController))
+			{
+				PresentViewController(new AnimationTransitionViewController(), true, null);
+			}
+			else { 
+				
+			}
 		}
 	}
 

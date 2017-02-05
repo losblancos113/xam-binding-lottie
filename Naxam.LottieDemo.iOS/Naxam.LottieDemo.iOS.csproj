@@ -134,6 +134,7 @@
       <DependentUpon>JSONExplorerViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="LAAnimationViewHelper.cs" />
+    <Compile Include="AnimationTransitionViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\LottieLogo1.json" />

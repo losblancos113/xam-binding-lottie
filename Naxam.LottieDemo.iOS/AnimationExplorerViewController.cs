@@ -9,7 +9,6 @@ namespace Naxam.LottieDemo.iOS
 	public partial class AnimationExplorerViewController : UIViewController
 	{
 		private LAAnimationView vwAnimation;
-		private static UIColor lottieColor = new UIColor(50.0f / 255.0f, 207.0f / 255.0f, 193.0f / 255.0f, 1f);
 
 		protected AnimationExplorerViewController(IntPtr handle) : base(handle)
 		{
@@ -144,7 +143,7 @@ namespace Naxam.LottieDemo.iOS
 			}
 			else if (View.BackgroundColor == UIColor.Black)
 			{
-				View.BackgroundColor = lottieColor;
+				View.BackgroundColor = LAAnimationViewHelper.LottieColor;
 			} else {
 				View.BackgroundColor = UIColor.White;
 			}
@@ -221,7 +220,7 @@ namespace Naxam.LottieDemo.iOS
 		void ResetButton(UIBarButtonItem item, bool highlighted) {
 			item.TintColor = highlighted
 				? UIColor.Red
-				: lottieColor;
+				: LAAnimationViewHelper.LottieColor;
 		}
 	}
 }
