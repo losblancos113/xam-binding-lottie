@@ -16,6 +16,11 @@ namespace Naxam.LottieDemo.iOS
 			{
 				jsonFile = NSBundle.MainBundle.PathForResource(fileName.Split('.')[0], "json", subfolder);
 			}
+
+			if (jsonFile == null) {
+				return null;
+			}
+
 			var data = NSData.FromFile(jsonFile);
 			NSError error;
 			var json = NSJsonSerialization.Deserialize(data, NSJsonReadingOptions.AllowFragments, out error) 

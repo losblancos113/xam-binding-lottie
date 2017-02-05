@@ -74,7 +74,7 @@ namespace Naxam.LottieDemo
 				},
 				new Sample {
 					Title = "Animated Keyboard",
-
+					ControllerType = typeof(TypingDemoViewController)
 				},
 				new Sample {
 					Title = "Animated Transitions Demo",
@@ -112,7 +112,7 @@ namespace Naxam.LottieDemo
 				PresentViewController(new AnimationTransitionViewController(), true, null);
 			}
 			else { 
-				
+				PresentViewController(new TypingDemoViewController(), true, null);
 			}
 		}
 	}
