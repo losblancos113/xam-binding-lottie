@@ -1,13 +1,15 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using Android.Support.V7.App;
+using Lottie;
 
 namespace Naxam.LottieDemo.Droid
 {
-	[Activity(Label = "LottieDemo", MainLauncher = true, Icon = "@mipmap/icon")]
-	public class MainActivity : Activity
+	[Activity(Label = "LottieDemo", MainLauncher = true, Icon = "@mipmap/ic_launcher", Theme="@style/AppTheme")]
+	public class MainActivity : AppCompatActivity
 	{
-		int count = 1;
+		LottieAnimationView animationView;
 
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
@@ -16,11 +18,21 @@ namespace Naxam.LottieDemo.Droid
 			// Set our view from the "main" layout resource
 			SetContentView(Resource.Layout.Main);
 
-			// Get our button from the layout resource,
-			// and attach an event to it
-			Button button = FindViewById<Button>(Resource.Id.myButton);
+			animationView = FindViewById<LottieAnimationView>(Resource.Id.animation_view);
+		}
 
-			button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+		protected override void OnStart()
+		{
+			base.OnStart();
+
+			animationView.Progress = 0;
+			animationView.PlayAnimation();
+		}
+
+		protected override void OnStop()
+		{
+			base.OnStop();
+			animationView.CancelAnimation();
 		}
 	}
 }

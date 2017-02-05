@@ -7,4 +7,11 @@
   This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
   <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
   -->
+	<!-- Normalize the namespace for .NET -->
+	<attr path="/api/package[@name='com.airbnb.lottie']" name="managedName">Lottie</attr>
+	<attr path="/api/package[@name='com.airbnb.lottie']/interface[@name='AnimatableValue']" name="managedName">IAnimatableValue</attr>
+	<attr path="/api/package[@name='com.airbnb.lottie']/interface[@name='AnimatableValue']" name="visibility">public</attr>
+
+	<!--<attr path="/api/package[@name='com.airbnb.lottie']/class[@name='KeyframeAnimation']" name="visibility">public</attr>
+	<attr path="/api/package[@name='com.airbnb.lottie']/interface[@name='KeyframeAnimation.AnimationListener']" name="managedName">KeyframeAnimation.IAnimationListener</attr>-->
 </metadata>
