@@ -109,6 +109,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Typing\" />
+    <Folder Include="Explorer\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -125,16 +127,18 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="AnimationExplorerViewController.cs" />
-    <Compile Include="AnimationExplorerViewController.designer.cs">
-      <DependentUpon>AnimationExplorerViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="JSONExplorerViewController.cs" />
-    <Compile Include="JSONExplorerViewController.designer.cs">
-      <DependentUpon>JSONExplorerViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="LAAnimationViewHelper.cs" />
     <Compile Include="AnimationTransitionViewController.cs" />
+    <Compile Include="Typing\AnimatedTextField.cs" />
+    <Compile Include="Typing\TypingDemoViewController.cs" />
+    <Compile Include="Explorer\AnimationExplorerViewController.cs" />
+    <Compile Include="Explorer\AnimationExplorerViewController.designer.cs">
+      <DependentUpon>AnimationExplorerViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Explorer\JSONExplorerViewController.cs" />
+    <Compile Include="Explorer\JSONExplorerViewController.designer.cs">
+      <DependentUpon>JSONExplorerViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\LottieLogo1.json" />
