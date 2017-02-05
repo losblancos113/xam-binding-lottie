@@ -1,7 +1,8 @@
 # Xamarin binding for Lottie ([iOS](https://github.com/airbnb/lottie-ios) and [Android](https://github.com/airbnb/lottie-android))
 
-Lottie is a mobile library for Android and iOS that parses [Adobe After Effects](http://www.adobe.com/products/aftereffects.html) animations exported as json with [bodymovin](https://github.com/bodymovin/bodymovin) and renders the vector animations natively on mobile and through React Native!
+*NOTE*: There is another binding repo from @martijn00 [here](https://github.com/martijn00/LottieXamarin)
 
+Lottie is a mobile library for Android and iOS that parses [Adobe After Effects](http://www.adobe.com/products/aftereffects.html) animations exported as json with [bodymovin](https://github.com/bodymovin/bodymovin) and renders the vector animations natively on mobile and through React Native!
 
 
 For the first time, designers can create **and ship** beautiful animations without an engineer painstakingly recreating it by hand.
