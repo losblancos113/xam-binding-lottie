@@ -331,7 +331,7 @@ namespace Naxam.LottieDemo.iOS
 			}
 
 			vwAnimation.ContentMode = UIViewContentMode.ScaleAspectFit;
-			character = sanatizedCharacter;
+			this.character = sanatizedCharacter;
 
 			ContentView.AddSubview(vwAnimation);
 
